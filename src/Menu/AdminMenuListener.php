@@ -12,13 +12,7 @@ final class AdminMenuListener
     public function buildMenu(MenuBuilderEvent $event): void
     {
         $menu = $event->getMenu();
-//        $header = $this->getHeader($menu);
-
-        $header = $menu->getChild('configuration');
-
-        if (null === $header) {
-            throw new \RuntimeException('No header found with key `configuration`');
-        }
+        $header = $this->getHeader($menu);
 
         $header
             ->addChild('gift_option', [

@@ -22,8 +22,7 @@ class GiftOptionContext implements Context
         private IndexPage $indexPage,
         private UpdatePage $updatePage,
         private CreatePage $createPage,
-        private NotificationCheckerInterface $notificationChecker,
-        private CurrentPageResolverInterface $currentPageResolver
+        private NotificationCheckerInterface $notificationChecker
     ) {
     }
 

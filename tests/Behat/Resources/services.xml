@@ -39,7 +39,6 @@
             <argument type="service" id="tomsgu_sylius_gift.behat.page.admin.gift_option.update"/>
             <argument type="service" id="tomsgu_sylius_gift.behat.page.admin.gift_option.create"/>
             <argument type="service" id="sylius.behat.notification_checker" />
-            <argument type="service" id="sylius.behat.current_page_resolver" />
 
         </service>
 
