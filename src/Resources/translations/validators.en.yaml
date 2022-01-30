@@ -1,0 +1,6 @@
+tomsgu_sylius_gift:
+    gift_option:
+        label:
+            not_blank: Label cannot be blank.
+        note:
+            not_blank: Note cannot be blank.

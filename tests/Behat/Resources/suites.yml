@@ -1,0 +1,16 @@
+# Put your Behat suites definitions here
+
+default:
+    suites:
+        ui_managing_gift_options:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+                - sylius.behat.context.setup.channel
+                - sylius.behat.context.setup.admin_security
+                 
+                - tomsgu_sylius_gift.context.setup.gift_option
+                 
+                - tomsgu_sylius_gift.context.ui.admin.gift_option
+
+            filters:
+                tags: "@managing_gift_options && @ui"

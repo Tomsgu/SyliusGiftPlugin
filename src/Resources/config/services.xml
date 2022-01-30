@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <imports>
+        <import resource="services/forms.xml" />
+        <import resource="services/menus.xml" />
+        <import resource="services/listeners.xml" />
+        <import resource="services/services.xml" />
+    </imports>
+
+    <parameters>
+        <parameter key="tomsgu_sylius_gift_option.form.type.gift_option.validation_groups" type="collection">
+            <parameter>tomsgu_gift_option</parameter>
+        </parameter>
+    </parameters>
+
+</container>

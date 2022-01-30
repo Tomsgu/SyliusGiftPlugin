@@ -1,0 +1,10 @@
+{% from '@SyliusAdmin/Macro/translationForm.html.twig' import translationForm %}
+
+<div class="ui segment">
+    {{ form_errors(form) }}
+    {{ form_row(form.channel) }}
+    {{ form_row(form.enabled) }}
+    {{ form_row(form.orderNote) }}
+</div>
+
+{{ translationForm(form.translations) }}

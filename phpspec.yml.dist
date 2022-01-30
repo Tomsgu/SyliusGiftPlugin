@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Tomsgu\SyliusGiftPlugin
+        psr4_prefix: Tomsgu\SyliusGiftPlugin

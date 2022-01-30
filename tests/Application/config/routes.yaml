@@ -1,0 +1,3 @@
+tomsgu_sylius_gift_admin:
+    resource: "@TomsguSyliusGiftPlugin/Resources/config/routes/admin.yaml"
+    prefix: /admin

@@ -1,0 +1,4 @@
+{% if form.gift_option is defined %}
+    {{ form_row(form.gift_option) }}
+{% endif %}
+{{ form_row(form.notes, sylius_test_form_attribute('extra-notes')|merge({'attr': {'rows': 3}})) }}

@@ -1,0 +1,30 @@
+sylius_grid:
+    grids:
+        tomsgu_sylius_gift_gift_option:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%tomsgu_sylius_gift.model.gift_option.class%"
+            fields:
+                label:
+                    type: string
+                    label: sylius.ui.label
+                channel:
+                    type: twig
+                    label: sylius.ui.channel
+                    options:
+                        template: "@SyliusAdmin/Channel/Grid/Field/name.html.twig"
+                enabled:
+                    type: twig
+                    label: sylius.ui.enabled
+                    options:
+                        template: "@SyliusUi/Grid/Field/enabled.html.twig"
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults public="true" />
+
+        <service id="tomsgu_sylius_gift.context.setup.gift_option"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Context\Setup\GiftOptionContext">
+             <argument type="service" id="sylius.behat.shared_storage"/>
+             <argument type="service" id="tomsgu_sylius_gift.repository.gift_option"/>
+        </service>
+
+        <service id="tomsgu_sylius_gift.behat.page.admin.gift_option.index"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Page\Admin\GiftOption\IndexPage"
+                 parent="sylius.behat.page.admin.crud.index"
+                 public="false">
+            <argument>tomsgu_sylius_gift_admin_gift_option_index</argument>
+        </service>
+
+        <service id="tomsgu_sylius_gift.behat.page.admin.gift_option.update"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Page\Admin\GiftOption\UpdatePage"
+                 parent="sylius.behat.page.admin.crud.update"
+                 public="false">
+            <argument>tomsgu_sylius_gift_admin_gift_option_update</argument>
+        </service>
+
+        <service id="tomsgu_sylius_gift.behat.page.admin.gift_option.create"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Page\Admin\GiftOption\CreatePage"
+                 parent="sylius.behat.page.admin.crud.create"
+                 public="false">
+            <argument>tomsgu_sylius_gift_admin_gift_option_create</argument>
+        </service>
+
+        <service id="tomsgu_sylius_gift.context.ui.admin.gift_option"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Context\Ui\Admin\GiftOptionContext"
+        >
+            <argument type="service" id="sylius.behat.shared_storage"/>
+            <argument type="service" id="tomsgu_sylius_gift.behat.page.admin.gift_option.index"/>
+            <argument type="service" id="tomsgu_sylius_gift.behat.page.admin.gift_option.update"/>
+            <argument type="service" id="tomsgu_sylius_gift.behat.page.admin.gift_option.create"/>
+            <argument type="service" id="sylius.behat.notification_checker" />
+            <argument type="service" id="sylius.behat.current_page_resolver" />
+
+        </service>
+
+    </services>
+</container>

@@ -1,0 +1,8 @@
+tomsgu_sylius_gift:
+    ui:
+        gift_options: Gift options
+        edit_gift_option: Edit gift option
+        order_note: Note to be added to an order
+        gift_option_label: Gift checkbox label
+    menu: 
+        gift_option: Gift option

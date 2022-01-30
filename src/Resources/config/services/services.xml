@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="Tomsgu\SyliusGiftPlugin\Service\GiftOptionContext">
+            <argument type="service" id="sylius.context.channel" />
+            <argument type="service" id="tomsgu_sylius_gift.repository.gift_option" />
+        </service>
+
+        <service id="Tomsgu\SyliusGiftPlugin\Service\GiftOptionContextInterface"
+                 alias="Tomsgu\SyliusGiftPlugin\Service\GiftOptionContext"
+        />
+
+        <service id="Tomsgu\SyliusGiftPlugin\Service\OrderGiftChecker">
+            <argument type="service" id="tomsgu_sylius_gift.repository.gift_option" />
+        </service>
+
+    </services>
+</container>

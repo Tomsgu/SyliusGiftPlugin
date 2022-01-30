@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="tomsgu_sylius_gift_option.form.type.gift_option"
+                 class="Tomsgu\SyliusGiftPlugin\Form\Type\GiftOptionType">
+            <argument>%tomsgu_sylius_gift.model.gift_option.class%</argument>
+            <argument>%tomsgu_sylius_gift_option.form.type.gift_option.validation_groups%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="tomsgu_sylius_gift_option.form.type.gift_option_translation"
+                 class="Tomsgu\SyliusGiftPlugin\Form\Type\GiftOptionTranslationType">
+            <argument>%tomsgu_sylius_gift.model.gift_option_translation.class%</argument>
+<!--            <argument>%tomsgu_sylius_gift_option.form.type.gift_option_translation.validation_groups%</argument>-->
+            <tag name="form.type" />
+        </service>
+
+        <service id="tomsgu_sylius_gift_option.form.type.checkout_complete"
+                 class="Tomsgu\SyliusGiftPlugin\Form\Type\CheckoutCompleteType">
+            <argument type="service" id="Tomsgu\SyliusGiftPlugin\Service\GiftOptionContextInterface" />
+            <tag name="form.type_extension" extended_type="Sylius\Bundle\CoreBundle\Form\Type\Checkout\CompleteType" />
+        </service>
+
+    </services>
+</container>

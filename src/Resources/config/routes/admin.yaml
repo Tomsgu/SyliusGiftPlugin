@@ -1,0 +1,14 @@
+tomsgu_sylius_gift_admin_gift_option:
+    resource: |
+        alias: tomsgu_sylius_gift.gift_option
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: tomsgu_sylius_gift_gift_option
+        vars:
+            all:
+                templates:
+                    form: "@TomsguSyliusGiftPlugin/Admin/GiftOption/_form.html.twig"
+            index:
+                icon: 'gift'
+    type: sylius.resource

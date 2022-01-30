@@ -1,0 +1,2 @@
+imports:
+    - { resource: '../grids/tomsgu_sylius_gift_gift_option.yaml' }
