@@ -1,7 +1,8 @@
 # Tomsgu SyliusGiftPlugin
 
-Adds a checkbox to a customer check out page indicating that it's a 
-gift for a different person.
+This plugin adds an option to a customer to mark their orders as gifts to 
+another person. This information is passed to an order through its notes
+field.
 
 * [Installation](#installation)
 * [Troubleshooting](#troubleshooting)
@@ -71,7 +72,7 @@ Override the [Sylius Form](https://github.com/Sylius/Sylius/blob/master/src/Syli
   `templates/bundles/SyliusShopBundle/Checkout/Complete/_form.html.twig`
 
     ```bash
-    $ cp vendor/tomsgu/sylius-gift-plugin/src/Resources/bundles/SyliusShopBundle/Checkout/Complete/_form.html.twig \
+    $ cp vendor/tomsgu/sylius-gift-plugin/src/Resources/views/bundles/SyliusShopBundle/Checkout/Complete/_form.html.twig \
     templates/bundles/SyliusShopBundle/Checkout/Complete/_form.html.twig
     ```
 
