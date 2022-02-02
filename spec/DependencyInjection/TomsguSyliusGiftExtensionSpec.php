@@ -10,12 +10,12 @@ use Tomsgu\SyliusGiftPlugin\DependencyInjection\TomsguSyliusGiftExtension;
 
 class TomsguSyliusGiftExtensionSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    function it_is_initializable(): void
     {
         $this->shouldHaveType(TomsguSyliusGiftExtension::class);
     }
 
-    function it_is_extending_abstract_resource_extension()
+    function it_is_extending_abstract_resource_extension(): void
     {
         $this->shouldHaveType(AbstractResourceExtension::class);
     }

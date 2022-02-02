@@ -48,7 +48,7 @@ class OrderGiftCheckerSpec extends ObjectBehavior
         ChannelInterface $channel,
         GiftOptionInterface $giftOption,
         GiftOptionRepositoryInterface $repository
-    ){
+    ): void {
         $this->beConstructedWith($repository);
         $order->getChannel()->willReturn($channel);
         $repository->findByChannel($channel)->willReturn($giftOption);

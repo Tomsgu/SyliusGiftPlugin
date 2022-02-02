@@ -12,7 +12,7 @@ use Tomsgu\SyliusGiftPlugin\Model\GiftOptionTranslationInterface;
 
 class GiftOptionTranslationSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    function it_is_initializable(): void
     {
         $this->shouldHaveType(GiftOptionTranslation::class);
     }
