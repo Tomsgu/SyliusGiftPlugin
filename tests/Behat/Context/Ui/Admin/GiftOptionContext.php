@@ -7,7 +7,6 @@ namespace Tests\Tomsgu\SyliusGiftPlugin\Behat\Context\Ui\Admin;
 use Behat\Behat\Context\Context;
 use Sylius\Behat\NotificationType;
 use Sylius\Behat\Service\NotificationCheckerInterface;
-use Sylius\Behat\Service\Resolver\CurrentPageResolverInterface;
 use Sylius\Behat\Service\SharedStorageInterface;
 use Tests\Tomsgu\SyliusGiftPlugin\Behat\Page\Admin\GiftOption\CreatePage;
 use Tests\Tomsgu\SyliusGiftPlugin\Behat\Page\Admin\GiftOption\IndexPage;

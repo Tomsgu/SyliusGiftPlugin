@@ -21,15 +21,16 @@ class GiftOptionContext implements Context
 
     /**
      * @Given there is a gift option in the store
+     * @Given there is a gift option in the store with :note note
      */
-    public function thereIsAGiftOptionInTheStore(): void
+    public function thereIsAGiftOptionInTheStore(string $note = null): void
     {
-        $giftOption = $this->createGiftOption();
+        $giftOption = $this->createGiftOption($note);
 
         $this->saveGiftOption($giftOption);
     }
 
-    private function createGiftOption(): GiftOptionInterface
+    private function createGiftOption(string $note = null): GiftOptionInterface
     {
         $giftOption = new GiftOption();
         $giftOption->setCurrentLocale('en_US');
@@ -41,7 +42,11 @@ class GiftOptionContext implements Context
         }
 
         $giftOption->setLabel('This order is a gift for somebody else. Invoice is not sent in a package.');
-        $giftOption->setOrderNote('GIFT - don\'t send invoice');
+        if ($note === null) {
+            $note = 'GIFT - don\'t send invoice';
+        }
+        $giftOption->setOrderNote($note);
+
         $giftOption->setEnabled(true);
 
         return $giftOption;

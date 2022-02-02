@@ -31,6 +31,18 @@
             <argument>tomsgu_sylius_gift_admin_gift_option_create</argument>
         </service>
 
+        <service id="tomsgu_sylius_gift.behat.page.shop.complete"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Page\Shop\CompletePage"
+                 parent="sylius.behat.symfony_page"
+                 public="false">
+        </service>
+
+        <service id="tomsgu_sylius_gift.behat.page.admin.order.show"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Page\Admin\Order\ShowPage"
+                 parent="sylius.behat.page.admin.order.show"
+                 public="false">
+        </service>
+
         <service id="tomsgu_sylius_gift.context.ui.admin.gift_option"
                  class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Context\Ui\Admin\GiftOptionContext"
         >
@@ -40,6 +52,20 @@
             <argument type="service" id="tomsgu_sylius_gift.behat.page.admin.gift_option.create"/>
             <argument type="service" id="sylius.behat.notification_checker" />
 
+        </service>
+
+        <service id="tomsgu_sylius_gift.context.ui.shop.checkout_complete"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Context\Ui\Shop\CheckoutCompleteContext"
+        >
+            <argument type="service" id="tomsgu_sylius_gift.behat.page.shop.complete"/>
+        </service>
+
+        <service id="tomsgu_sylius_gift.context.ui.admin.managing_orders"
+                 class="Tests\Tomsgu\SyliusGiftPlugin\Behat\Context\Ui\Admin\ManagingOrdersContext"
+        >
+            <argument type="service" id="tomsgu_sylius_gift.behat.page.admin.order.show"/>
+            <argument type="service" id="sylius.behat.shared_security"/>
+            <argument type="service" id="sylius.behat.shared_storage"/>
         </service>
 
     </services>
