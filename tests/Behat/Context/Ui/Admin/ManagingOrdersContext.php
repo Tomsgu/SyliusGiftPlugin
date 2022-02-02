@@ -41,7 +41,8 @@ class ManagingOrdersContext implements Context
             $note = $giftNote;
         }
 
-        $this->sharedSecurityService->performActionAsAdminUser($user,
+        $this->sharedSecurityService->performActionAsAdminUser(
+            $user,
             function () use ($order, $note) {
                 $this->showPage->open(['id' => $order->getId()]);
 
