@@ -9,7 +9,7 @@ use Sylius\Component\Core\Model\OrderInterface;
 use Tomsgu\SyliusGiftPlugin\Doctrine\ORM\GiftOptionRepositoryInterface;
 use Tomsgu\SyliusGiftPlugin\Model\GiftOptionInterface;
 
-class OrderGiftChecker
+class OrderGiftChecker implements OrderGiftCheckerInterface
 {
     public function __construct(private GiftOptionRepositoryInterface $giftOptionRepository)
     {

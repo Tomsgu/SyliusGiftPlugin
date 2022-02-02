@@ -7,7 +7,7 @@
 
         <service id="Tomsgu\SyliusGiftPlugin\Listener\AddGiftComment">
             <argument type="service" id="Symfony\Component\HttpFoundation\RequestStack"/>
-            <argument type="service" id="Tomsgu\SyliusGiftPlugin\Service\GiftOptionContextInterface" />
+            <argument type="service" id="Tomsgu\SyliusGiftPlugin\Service\OrderGiftNoteManagerInterface" />
             <tag name="kernel.event_subscriber"/>
         </service>
 

@@ -8,6 +8,7 @@ use Sylius\Component\Core\Model\OrderInterface;
 use Tomsgu\SyliusGiftPlugin\Doctrine\ORM\GiftOptionRepositoryInterface;
 use Tomsgu\SyliusGiftPlugin\Model\GiftOptionInterface;
 use Tomsgu\SyliusGiftPlugin\Service\OrderGiftChecker;
+use Tomsgu\SyliusGiftPlugin\Service\OrderGiftCheckerInterface;
 
 class OrderGiftCheckerSpec extends ObjectBehavior
 {
@@ -19,6 +20,11 @@ class OrderGiftCheckerSpec extends ObjectBehavior
     function it_is_initializable(): void
     {
         $this->shouldHaveType(OrderGiftChecker::class);
+    }
+
+    function it_implements_order_gift_checker_interface(): void
+    {
+        $this->shouldHaveType(OrderGiftCheckerInterface::class);
     }
 
     function it_decide_if_order_is_a_gift(

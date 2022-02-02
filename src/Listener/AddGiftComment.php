@@ -9,13 +9,13 @@ use Sylius\Component\Order\Model\OrderInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use Tomsgu\SyliusGiftPlugin\Service\GiftOptionContextInterface;
+use Tomsgu\SyliusGiftPlugin\Service\OrderGiftNoteManagerInterface;
 
 final class AddGiftComment implements EventSubscriberInterface
 {
     public function __construct(
         private RequestStack $requestStack,
-        private GiftOptionContextInterface $giftOptionContext
+        private OrderGiftNoteManagerInterface $orderGiftNoteManager
     ) {
     }
 
@@ -38,26 +38,8 @@ final class AddGiftComment implements EventSubscriberInterface
             return;
         }
 
-        $giftOption = $this->giftOptionContext->getGiftOption();
-        if ($giftOption === null || $giftOption->isEnabled() === false) {
-            return;
-        }
-
         /** @var OrderInterface $order */
         $order = $event->getSubject();
-        $note = $order->getNotes();
-        if ($note !== null && trim($note) !== '') {
-            $notes = sprintf(
-                '%s%s%s%s',
-                $giftOption->getOrderNote(),
-                \PHP_EOL,
-                \PHP_EOL,
-                $note
-            );
-        } else {
-            $notes = $giftOption->getOrderNote();
-        }
-
-        $order->setNotes($notes);
+        $this->orderGiftNoteManager->addGiftNote($order);
     }
 }

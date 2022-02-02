@@ -18,5 +18,17 @@
             <argument type="service" id="tomsgu_sylius_gift.repository.gift_option" />
         </service>
 
+        <service id="Tomsgu\SyliusGiftPlugin\Service\OrderGiftCheckerInterface"
+                 alias="Tomsgu\SyliusGiftPlugin\Service\OrderGiftChecker"
+        />
+
+        <service id="Tomsgu\SyliusGiftPlugin\Service\OrderGiftNoteManager">
+            <argument type="service" id="Tomsgu\SyliusGiftPlugin\Service\GiftOptionContextInterface" />
+        </service>
+
+        <service id="Tomsgu\SyliusGiftPlugin\Service\OrderGiftNoteManagerInterface"
+                 alias="Tomsgu\SyliusGiftPlugin\Service\OrderGiftNoteManager"
+        />
+
     </services>
 </container>
