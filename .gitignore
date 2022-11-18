@@ -1,9 +1,21 @@
-/.build/
 /vendor/
 /node_modules/
 /composer.lock
-/etc/build/
+
+/etc/build/*
+!/etc/build/.gitignore
 
 /tests/Application/yarn.lock
+/tests/Application/node_modules/
+
+/tests/Application/public/build/
+/tests/Application/public/media/
 
 /.phpunit.result.cache
+/behat.yml
+/phpspec.yml
+/phpunit.xml
+
+# Symfony CLI https://symfony.com/doc/current/setup/symfony_server.html#different-php-settings-per-project
+/.php-version
+/php.ini
