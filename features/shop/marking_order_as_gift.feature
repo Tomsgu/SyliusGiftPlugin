@@ -24,6 +24,7 @@ Feature: Marking an order as a gift
         When I check the gift checkbox field
         And I confirm my order
         Then I should see the thank you page
+        And I am logged in as an administrator
         And the administrator should see that order placed by "customer@example.com" has a gift note
 
     @ui
@@ -32,10 +33,12 @@ Feature: Marking an order as a gift
         And I provide additional note like "extra note"
         And I confirm my order
         Then I should see the thank you page
+        And I am logged in as an administrator
         And the administrator should see that order placed by "customer@example.com" has a gift note
 
     @ui
     Scenario: Place an order without marking it as a gift
         And I confirm my order
         Then I should see the thank you page
+        And I am logged in as an administrator
         And the administrator should see that order placed by "customer@example.com" has no note
