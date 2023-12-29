@@ -6,7 +6,9 @@ namespace Tomsgu\SyliusGiftPlugin\Doctrine\ORM;
 
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 use Sylius\Component\Channel\Model\ChannelInterface;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Tomsgu\SyliusGiftPlugin\Model\GiftOptionInterface;
+
 
 class GiftOptionRepository extends EntityRepository implements GiftOptionRepositoryInterface
 {
