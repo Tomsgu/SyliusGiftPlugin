@@ -19,8 +19,12 @@ class OrderGiftChecker implements OrderGiftCheckerInterface
     {
         /** @var ChannelInterface $channel */
         $channel = $order->getChannel();
-        /** @var GiftOptionInterface $giftOption */
+        /** @var GiftOptionInterface|null $giftOption */
         $giftOption = $this->giftOptionRepository->findByChannel($channel);
+
+        if ($giftOption === null) {
+            return false;
+        }
 
         return str_contains($order->getNotes() ?? '', $giftOption->getOrderNote()) === true;
     }

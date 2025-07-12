@@ -56,4 +56,18 @@ class OrderGiftCheckerSpec extends ObjectBehavior
         $giftOption->getOrderNote()->willReturn('GIFT');
         $this->isOrderGift($order)->shouldReturn(false);
     }
+
+    function it_returns_false_when_gift_option_does_not_exist(
+        OrderInterface $order,
+        ChannelInterface $channel,
+        GiftOptionRepositoryInterface $repository
+    ): void {
+        $this->beConstructedWith($repository);
+        $order->getChannel()->willReturn($channel);
+        $repository->findByChannel($channel)->willReturn(null);
+
+        $order->getNotes()->shouldNotBeCalled();
+
+        $this->isOrderGift($order)->shouldReturn(false);
+    }
 }
