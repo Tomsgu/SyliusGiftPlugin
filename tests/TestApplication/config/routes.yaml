@@ -1,0 +1,2 @@
+tomsgu_sylius_gift_admin:
+    resource: "@TomsguSyliusGiftPlugin/config/routes/admin.yaml"

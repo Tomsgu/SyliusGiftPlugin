@@ -1,4 +1,4 @@
-@checkout
+@checkout @javascript
 Feature: Marking an order as a gift
     In order to mark an order as a gift
     As a customer
