@@ -4,7 +4,7 @@ sylius_grid:
             driver:
                 name: doctrine/orm
                 options:
-                    class: "%tomsgu_sylius_gift.model.gift_option.class%"
+                    class: Tomsgu\SyliusGiftPlugin\Model\GiftOption
             fields:
                 label:
                     type: string
@@ -13,12 +13,12 @@ sylius_grid:
                     type: twig
                     label: sylius.ui.channel
                     options:
-                        template: "@SyliusAdmin/Channel/Grid/Field/name.html.twig"
+                        template: "@SyliusAdmin/shared/grid/field/channel.html.twig"
                 enabled:
                     type: twig
                     label: sylius.ui.enabled
                     options:
-                        template: "@SyliusUi/Grid/Field/enabled.html.twig"
+                        template: "@SyliusAdmin/shared/grid/field/boolean.html.twig"
             actions:
                 main:
                     create:
