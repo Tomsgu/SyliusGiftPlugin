@@ -20,7 +20,7 @@ class CreatePage extends BaseCreatePage implements CreatePageInterface
 
     public function containsErrorWithMessage(string $message, bool $strict = true): bool
     {
-        $validationMessageElements = $this->getDocument()->findAll('css', '.sylius-validation-error');
+        $validationMessageElements = $this->getDocument()->findAll('css', '.invalid-feedback');
 
         foreach ($validationMessageElements as $validationMessageElement) {
             if (true === $strict && $message === $validationMessageElement->getText()) {

@@ -15,7 +15,7 @@ default:
                 - tomsgu_sylius_gift.context.ui.admin.gift_option
 
             filters:
-                tags: "@managing_gift_options && @ui"
+                tags: "@managing_gift_options&&@ui"
 
         ui_checkout:
             contexts:
@@ -49,4 +49,4 @@ default:
                 - tomsgu_sylius_gift.context.ui.shop.checkout_complete
                 - tomsgu_sylius_gift.context.ui.admin.managing_orders
             filters:
-                tags: "@checkout && @ui"
+                tags: "@checkout&&@ui"

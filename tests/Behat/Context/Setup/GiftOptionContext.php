@@ -23,17 +23,18 @@ class GiftOptionContext implements Context
      * @Given there is a gift option in the store
      * @Given there is a gift option in the store with :note note
      */
-    public function thereIsAGiftOptionInTheStore(string $note = null): void
+    public function thereIsAGiftOptionInTheStore(?string $note = null): void
     {
         $giftOption = $this->createGiftOption($note);
 
         $this->saveGiftOption($giftOption);
     }
 
-    private function createGiftOption(string $note = null): GiftOptionInterface
+    private function createGiftOption(?string $note = null): GiftOptionInterface
     {
         $giftOption = new GiftOption();
         $giftOption->setCurrentLocale('en_US');
+        $giftOption->setFallbackLocale('en_US');
 
         if ($this->sharedStorage->has('channel')) {
             /** @var ChannelInterface $channel */

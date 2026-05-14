@@ -10,6 +10,12 @@ class ShowPage extends BaseShowPage implements ShowPageInterface
 {
     public function hasNoteElement(): bool
     {
-        return $this->hasElement('order_notes') === true;
+        if (!$this->hasElement('notes')) {
+            return false;
+        }
+
+        $text = trim($this->getElement('notes')->getText());
+
+        return $text !== '' && $text !== '-';
     }
 }

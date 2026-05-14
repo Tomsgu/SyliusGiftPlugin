@@ -27,13 +27,11 @@ class GiftOption implements GiftOptionInterface
         $this->orderNote = '';
     }
 
-    /** @psalm-suppress PropertyNotSetInConstructor */
-    protected ?int $id;
+    protected ?int $id = null;
 
     protected string $orderNote;
 
-    /** @psalm-suppress PropertyNotSetInConstructor */
-    protected ?ChannelInterface $channel;
+    protected ?ChannelInterface $channel = null;
 
     public function getId(): ?int
     {

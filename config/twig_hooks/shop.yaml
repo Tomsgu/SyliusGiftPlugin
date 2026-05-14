@@ -1,0 +1,6 @@
+sylius_twig_hooks:
+    hooks:
+        'sylius_shop.checkout.complete.content.form':
+            gift_option:
+                template: '@TomsguSyliusGiftPlugin/Shop/Checkout/Complete/_gift_option.html.twig'
+                priority: 50

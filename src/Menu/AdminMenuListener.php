@@ -19,7 +19,7 @@ final class AdminMenuListener
                 'route' => 'tomsgu_sylius_gift_admin_gift_option_index',
             ])
             ->setLabel('tomsgu_sylius_gift.menu.gift_option')
-            ->setLabelAttribute('icon', 'gift');
+            ->setLabelAttribute('icon', 'tabler:gift');
     }
 
     private function getHeader(ItemInterface $menu): ItemInterface

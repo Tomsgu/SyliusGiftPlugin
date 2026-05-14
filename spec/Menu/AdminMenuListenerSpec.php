@@ -27,7 +27,7 @@ class AdminMenuListenerSpec extends ObjectBehavior
             'route' => 'tomsgu_sylius_gift_admin_gift_option_index',
         ])->willReturn($configMenu);
         $configMenu->setLabel('tomsgu_sylius_gift.menu.gift_option')->willReturn($configMenu);
-        $configMenu->setLabelAttribute('icon', 'gift')->shouldBeCalled();
+        $configMenu->setLabelAttribute('icon', 'tabler:gift')->shouldBeCalled();
 
         $this->buildMenu($menuBuilderEvent);
     }

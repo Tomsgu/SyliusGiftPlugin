@@ -8,7 +8,7 @@ use Sylius\Component\Resource\Model\AbstractTranslation;
 
 class GiftOptionTranslation extends AbstractTranslation implements GiftOptionTranslationInterface
 {
-    protected mixed $id;
+    protected mixed $id = null;
 
     protected string $label;
 
