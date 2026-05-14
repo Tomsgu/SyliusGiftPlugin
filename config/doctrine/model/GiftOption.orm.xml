@@ -26,6 +26,6 @@
 
         <one-to-one field="channel" target-entity="Sylius\Component\Channel\Model\ChannelInterface" />
 
-    </mapped-superclass>>
+    </mapped-superclass>
 
 </doctrine-mapping>
